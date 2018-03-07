@@ -59,12 +59,12 @@ function echoTitle() {
 <html>
     <head>
         <title>M152 | <?php echoTitle(); ?></title>
-        <link rel="stylesheet" href="uikit/css/uikit.min.css" />
-        <link rel="stylesheet" href="uikit/css/uikit.rtl.min.css" />
+        <link rel="stylesheet" href="uikit/dist/css/uikit.min.css" />
+        <link rel="stylesheet" href="uikit/dist/css/uikit.rtl.min.css" />
         <link rel="stylesheet" href="default.css" />
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script type="text/javascript" src="uikit/js/uikit.min.js"></script>
-        <script type="text/javascript" src="uikit/js/uikit-icons.min.js"></script>
+        <script type="text/javascript" src="uikit/dist/js/uikit.min.js"></script>
+        <script type="text/javascript" src="uikit/dist/js/uikit-icons.min.js"></script>
         <?= $styleTag ?>
         <?= $scriptTag ?>
         <?
