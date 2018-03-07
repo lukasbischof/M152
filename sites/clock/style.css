@@ -1,0 +1,102 @@
+body:-webkit-full-screen {
+	background-color: black;
+}
+
+body:-moz-full-screen {
+	background-color: black;
+}
+
+body:-ms-full-screen {
+	background-color: black;
+}
+
+body:-o-full-screen {
+	background-color: black;
+}
+
+body:full-screen {
+	background-color: black;
+}
+
+#space {
+	width: 710px;
+	height: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -350px;
+	margin-top: -250px;
+	cursor: default;
+	-webkit-perspective: 1000;
+	-webkit-user-select: none;
+	-webkit-touch-callout: transparent;
+	   -moz-perspective: 1000;
+	   -moz-user-select: none;
+	    -ms-perspective: 1000;
+	    -ms-user-select: none;
+	     -o-perspective: 1000;
+	     -o-user-select: none;
+	    	perspective: 1000;
+			user-select: none;
+}
+
+#space:-webkit-full-screen {
+	background-color: black;
+}
+
+#cancelFullscreen {
+	display: none;
+}
+
+.ring {
+	position: absolute;
+	top: 50%;
+
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+	    -ms-transform-style: preserve-3d;
+		 -o-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-timing-function: ease-in-out;
+	   -moz-transition-duration: 0.5s;
+	   -moz-transition-property: -webkit-transform;
+	   -moz-transition-timing-function: ease-in-out;
+		-ms-transition-duration: 0.5s;
+		-ms-transition-property: -webkit-transform;
+		-ms-transition-timing-function: ease-in-out;
+		 -o-transition-duration: 0.5s;
+		 -o-transition-property: -webkit-transform;
+		 -o-transition-timing-function: ease-in-out;
+			transition-duration: 0.5s;
+			transition-property: -webkit-transform;
+			transition-timing-function: ease-in-out;
+}
+
+.segment {
+	width: 100px;
+	height: 100px;
+	background-color: rgba(55,55,55,0.95);
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+	color: white;
+	font-size: 90px;
+	text-align: center;
+	font-family: 'Helvetica';
+	text-shadow: -1px -1px 0px gray;
+	line-height: normal !important;
+	-webkit-backface-visibility: visible;
+	   -moz-backface-visibility: visible;
+	    -ms-backface-visibility: visible;
+		 -o-backface-visibility: visible;
+		 	backface-visibility: visible;
+}
+
+#secondFirst {
+	z-index: 2;
+}

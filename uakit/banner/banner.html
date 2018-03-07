@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Banner</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="audience" content="Alle" />
+		<meta http-equiv="content-language" content="de" />
+		<link rel="stylesheet" href="UABanner.min.css" />
+		<script type="text/javascript" src="UABanner.min.js"></script>
+
+		<script type="text/javascript">
+			window.addEventListener("load", function(e1) {
+				document.querySelector("button").addEventListener("click", function(e2) {
+					//var banner = new UABanner("Custom Banner", "Dies ist mein Banner :)");
+					var banner = new UABanner({
+						title: "Custom Banner",
+						text : "Dies ist mein Banner :)",
+						//timeout: false,
+						width: 500,
+						buttons: [
+							new UAButton({
+								text: "Abbrechen",
+								style: UAButton.DESTRUCTIVE,
+								pressedEventHandler: function(e) {
+									e.banner.dismiss();
+								}
+							}),
+							new UAButton("Ok", UAButton.NORMAL, function(e) {
+								new UABanner({
+									title: "Ausgeführt",
+									timeout: 3000,
+									width: 200
+								}).show();
+								
+								setTimeout(function() {
+									e.banner.dismiss();
+								}, 3100);
+							})
+						]
+					});
+					
+					banner.show();
+				});
+			});
+		</script>
+		<style type="text/css">
+			@charset "UTF-8";
+			
+			body, html {
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+			
+			nav {
+				width: 200px;
+				height: 100%;
+				background-color: lightgreen;
+				position: fixed;
+				display: inline-block;
+				padding-top: 20px;
+				padding-left: 10px;
+				margin-top: 0px;
+				top: 0;
+			}
+			
+			#main {
+				margin-left: 250px;
+				margin-top: 35px;
+			}
+			
+			#lustigeBar {
+				position: absolute;
+				top: 0px;
+				left: 210px;
+				width: calc(100% - 200px - 10px);
+				height: 12px;
+			}
+			
+			#lustigeBar table {
+				width: 100%;
+				height: 100%;
+				border-collapse: collapse;
+			}
+			
+			.barCell.n1 {
+				background: red;
+			}
+			
+			.barCell.n2 {
+				background: green;
+			}
+			
+			.barCell.n3 {
+				background: blue;
+			}
+			
+			.barCell.n4 {
+				background: yellow;
+			}
+			
+			ul {
+				list-style: none;
+				font-family: sans-serif;
+				font-size: 20px;
+			}
+			
+			li {
+				margin-bottom: 10px;
+				cursor: pointer;
+			}
+			
+			li:hover {
+				color: #000042;
+				font-weight: bold;
+			}
+			
+			li.title {
+				color: gray; 
+				cursor: default; 
+				margin-top: 30px;
+				margin-left: -10px;
+			}
+			
+			li.title:hover {
+				color: gray;
+				font-weight: normal !important;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div class="UAKit_banner">
+			<table class="UAKit_contentTable">
+				<tbody>
+					<tr>
+						<td>
+							<div class="UAKit_content">
+								<p class="UAKit_title">Formular wurde erfolgreich gesendet</p>
+								<p class="UAKit_text">Sie werden in Kürze eine Bestätigungs-Email erhalten. Bitte klicken Sie dann auf den Link.</p>
+							</div>
+						</td>
+						<td>
+							<div class="UAKit_controls">
+								<table>
+									<tbody>
+										<tr>
+											<td>
+												<div class="UAKit_button">
+													<span>
+														Optionen
+													</span>
+												</div>
+											</td>
+											<td>
+												<div class="UAKit_button destructive">
+													<span>
+														Abbrechen
+													</span>
+												</div>
+											</td>
+											<td>
+												<div class="UAKit_button">
+													<span>
+														Ok
+													</span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>-->
+		
+		
+		<nav>
+			<ul>
+				<li>Home</li>
+				<li>About</li>
+				<li class="title">Chemie</li>
+				<li style="text-decoration: underline">Kernfission</li>
+				<li>Kernfusion</li>
+				<li class="title">Physik</li>
+				<li>Photo-Effekt</li>
+				<li>Elektrische Felder</li>
+				<li>Elektro-magnetische Strahlung</li>
+			</ul>
+		</nav>
+		<div id="lustigeBar">
+			<table>
+				<tbody>
+					<tr>
+						<td class="barCell n1"></td>
+						<td class="barCell n2"></td>
+						<td class="barCell n3"></td>
+						<td class="barCell n4"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="main">
+			<article>
+				<br />
+				<h1 style="font-family: sans-serif; font-size: 30px;">Die Kernfission</h1>
+				<br />
+				<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Atom_editor_logo.svg/2000px-Atom_editor_logo.svg.png" width="200" height="200" style="float: left; -webkit-shape-outside: circle(56%); margin-right: 8px;" /> 
+					<p>Kernspaltung bezeichnet Prozesse der Kernphysik, bei denen ein Atomkern unter Energiefreisetzung in zwei oder mehr kleinere Kerne zerlegt wird. Seltener wird die Kernspaltung auch Kernfission (lateinisch fissio = Spaltung, englisch nuclear fission) genannt. Fission darf nicht mit Kernfusion, dem Verschmelzen zweier Atomkerne, verwechselt werden. Die durch die Spaltung neu entstandenen Stoffe heißen Spaltprodukte. (Wikipedia)</p>
+					<h3>Allgemeines</h3><p>Spaltung kommt nur bei genügend schweren Nukliden vor, denn nur dann sind die entstehenden Kerne fester gebunden als der ursprüngliche Kern, so dass die Spaltung dem Kern einen „Energievorteil“ bringt (siehe auch Massendefekt). Anschaulich lässt sich die Spaltung nach dem Tröpfchenmodell durch Schwingung und Zerreißen des Kerns verstehen: Die animierte Großansicht des obigen Bildes zeigt, wie der Kern (rot) von einem Neutron (blau) getroffen wird, sich in die Länge dehnt und in der Mitte einschnürt. Die lange Reichweite der gegenseitigen elektrischen Abstoßung der Protonen überwiegt dann die anziehende Kernkraft (siehe Atomkern) mit ihrer kurzen Reichweite und treibt die beiden Enden auseinander, so dass der Kern in zwei Bruchstücke – hoch angeregte mittelschwere Kerne – zerfällt.
+
+Außer den Bruchstück-Kernen (Spaltfragmenten) werden meist einige Neutronen freigesetzt, typischerweise zwei oder, wie im Bild, drei. Das Energiespektrum dieser Neutronen entspricht einer Maxwell-Verteilung, ist also kontinuierlich und reicht bis etwa 15 MeV hinauf. Die in der Boltzmann-Statistik maßgebliche absolute Temperatur hat hier allerdings kaum physikalische Bedeutung, sondern wird als freier Parameter behandelt, um die Kurve an die gemessene Form des Spektrums anzupassen. Die mittlere Neutronenenergie liegt bei etwa 2 MeV. Sie hängt etwas vom gespaltenen[1] Nuklid und im Fall der neutroneninduzierten Spaltung (s. unten) auch von der der Energie des spaltenden Neutrons ab. Wegen der Asymmetrie der Maxwell-Verteilungskurve ist die mittlere Energie verschieden von der wahrscheinlichsten Energie, dem Maximum der Kurve; diese liegt bei etwa 0,7 MeV.[2]
+
+Etwa 99 % der Neutronen werden als prompte Neutronen direkt bei der Spaltung innerhalb etwa 10−14 Sekunden emittiert. Der Rest, die verzögerten Neutronen, wird Millisekunden bis Minuten später bei den Betazerfällen der Spaltfragmente freigesetzt. (Wikipedia)</p><h3>Spaltfragmente</h3><p>Die Gesamtzahl der Protonen und Neutronen bleibt bei jeder Kernspaltung erhalten. Der bei weitem häufigste Fall ist die Spaltung in nur zwei neue Kerne (Spaltfragmente); nur in wenigen Promille aller Spaltungen entsteht noch ein drittes Fragment (ternäre Spaltung) mit meist sehr kleiner Massenzahl bis maximal etwa 30.[4]
+
+Bei zwei Spaltfragmenten sind viele verschiedene Nuklidpaare möglich. Meist entsteht ein leichteres (Massenzahl um 90) und ein schwereres Spaltfragment (Massenzahl um 140). Die Häufigkeitsverteilung (die Ausbeute aufgetragen als Funktion der Massenzahl des Spaltfragments) hat deshalb zwei Maxima.
+
+Als Beispiel seien zwei Möglichkeiten der Spaltung von Plutonium-239 nach Absorption eines Neutrons (n) genannt:
+
+<img src="https://upload.wikimedia.org/math/5/e/e/5ee4117f8c7c580d4aa7771f30d3ffd8.png" /></p><p>
+<img src="https://upload.wikimedia.org/math/d/7/4/d740c6e578aeef88ecf44639973a7243.png" /><br />
+
+Spaltung durch thermische Neutronen: Schematische Häufigkeit der Spaltfragmente (senkrecht) als Funktion der Spaltprodukt-Massenzahl A (waagerecht)
+Die Spaltfragmente sind mittelschwere Nuklide mit einem relativ hohen Neutronenanteil. Diesen Neutronenüberschuss haben sie vom Ursprungskern übernommen. Sie sind daher instabil und geben zunächst in einigen Fällen weitere Neutronen ab. Auch diese verzögerten Neutronen können weitere Kernspaltungen auslösen; sie sind für die Regelbarkeit von Kernreaktoren bedeutsam.
+
+Die danach noch immer instabilen Spaltprodukte bauen ihren Neutronenüberschuss durch aufeinander folgende Beta-minus-Zerfälle weiter ab. Da beim Betazerfall die Massenzahl des Atomkerns unverändert bleibt, bilden die Nuklide, die so aus einem gegebenen Spaltfragmentkern nacheinander entstehen, eine Isobarenkette; sie sind also Atomkerne verschiedener chemischer Elemente, aber gleichbleibender Massenzahl. Diese Umwandlungskette endet, wenn ein stabiles Nuklid entstanden ist. Die Halbwertszeiten sind am Anfang der Kette kurz, können aber für die letzten Zerfälle viele Jahre betragen. Genaue Zahlenwerte für die Häufigkeit der verschiedenen Isobarenketten, abhängig vom gespaltenen Nuklid und von der Energie des spaltenden Neutrons, finden sich in der Literatur. (Wikipedia)</p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<button>Show Banner</button>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Kernspaltung.svg/2000px-Kernspaltung.svg.png" width="376" height="230" style="float: left; margin: 10px 15px; margin-left: 15px" /> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+			</article>
+		</div>
+	</body>
+</html>

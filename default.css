@@ -1,0 +1,11 @@
+footer {
+    position: relative;
+    margin-bottom: 0;
+    bottom: 0;
+    color: darkgray;
+    padding: 30px 0px;
+    margin-top: 200px;
+    border-top: 1px solid lightgray;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+}

@@ -1,0 +1,19 @@
+.uk-card {
+    width: 300px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#addGallery {
+	text-align: right;
+	float: right;
+}
+
+.no-underline {
+	text-decoration: none;
+}
+
+.no-underline:hover {
+	text-decoration: none !important;
+}

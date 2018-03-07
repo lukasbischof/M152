@@ -1,0 +1,20 @@
+{
+    "actions": [
+        {
+            "name": "upload",
+            "controller": "upload/Upload.php"
+        },
+        {
+	        "name": "createGallery",
+	        "controller": "gallery/CreateGallery.php"
+        },
+        {
+	        "name": "renameGallery",
+	        "controller": "gallery/RenameGallery.php"
+        },
+        {
+	        "name": "deleteGallery",
+	        "controller": "gallery/DeleteGallery.php"
+        }
+    ]
+}
