@@ -1,6 +1,6 @@
 <h1>Portfolio</h1>
 <div class="uk-card uk-card-default uk-card-body uk-card-hover" style="width: 260px; text-align: center">
-	<a href="/bbw/files/portfolio.pdf"><span uk-icon="icon: cloud-download"></span> Download PDF</a>
+	<a href="/m152/files/portfolio.pdf"><span uk-icon="icon: cloud-download"></span> Download PDF</a>
 </div>
 <h2>Copyright</h2>
 <p>
